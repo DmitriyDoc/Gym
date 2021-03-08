@@ -1,0 +1,472 @@
+﻿@charset "utf-8";
+
+/*---------------------
+    Исправляет подсветку активного меню
+-----------------------*/
+.nav-menu ul li.current-menu-item >a {
+    color: #f36100;
+}
+
+.nav-menu ul li.current-menu-item >a:after {
+    opacity: 1;
+}
+
+
+/*---------------------
+  Исправляет вывод выпадающего меню dropdown
+-----------------------*/
+.nav-menu ul li .sub-menu {
+    position: absolute;
+    left: -30px;
+    top: 58px;
+    width: 180px;
+    background: #252525;
+    z-index: 99;
+    text-align: left;
+    padding: 13px 0 20px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.nav-menu ul li .sub-menu li {
+    margin-right: 0;
+    display: block;
+}
+
+.nav-menu ul li .sub-menu li a {
+    display: block;
+    text-transform: none;
+    padding: 6px 0 6px 30px;
+    font-weight: 400;
+}
+
+.nav-menu ul li .sub-menu li a:after {
+    display: none;
+}
+
+.nav-menu ul li:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/*---------------------
+  Исправляет стилизацию верстки для пагинации WP
+-----------------------*/
+nav.pagination {
+    display: block;
+}
+nav.pagination h2,
+nav.pagination .nav-links .dots{
+    display: none;
+}
+nav.pagination .nav-links {
+    padding-top: 10px;
+    margin-left: -15px;
+}
+
+nav.pagination .nav-links a {
+    background: #252525;
+}
+
+nav.pagination .nav-links .current,
+nav.pagination .nav-links a{
+     display: inline-block;
+     font-size: 18px;
+     color: #ffffff;
+     text-transform: uppercase;
+     padding: 10px 20px;
+     font-weight: 500;
+     margin-right: 15px;
+     border: 1px solid #252525 ;
+     font-family: "Oswald", sans-serif;
+     -webkit-transition: all 0.3s;
+     -o-transition: all 0.3s;
+     transition: all 0.3s;
+ }
+
+nav.pagination .nav-links a:last-child,
+nav.pagination .nav-links a:first-child {
+    visibility: hidden;
+    position: relative;
+}
+nav.pagination .nav-links a:last-child::after,
+nav.pagination .nav-links a:first-child::before {
+    display: inline-block;
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    font-weight: 500;
+    margin-right: 15px;
+    background: #252525;
+    font-family: "Oswald", sans-serif;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+nav.pagination .nav-links a:last-child::after{
+    content: 'NEXT';
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+nav.pagination .nav-links a:first-child::before{
+    content: 'PREV';
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 15px;
+
+}
+nav.pagination .nav-links a:hover {
+    background: #555555;
+}
+
+
+/*---------------------
+  Кастомизация заголовка категорий на странице Категории
+-----------------------*/
+.blog-section .blog-cat-header h5{
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+/*---------------------
+  Вынос селектора .breadcrumb-text h2 на уровень выше и его перестилизация
+-----------------------*/
+.breadcrumb-section h2 {
+    font-size: 60px;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+
+/*---------------------
+  Кавычка по центру в цитате single.php
+-----------------------*/
+.blog-details-text .blog-details-quote .quote-icon img {
+    position: relative;
+    top: 15px;
+
+}
+
+
+/*---------------------
+  Кастомизация цитаты под верстку WP, в файле single.php
+-----------------------*/
+
+.wp-block-quote {
+    text-align: center;
+    border: 2px solid #363636;
+    padding: 0px 22px 25px;
+    position: relative;
+    margin: 40px 0 30px 0;
+}
+
+.wp-block-quote::before {
+    content: '';
+    display: block;
+    position: relative;
+    top: -30px;
+    left: 47%;
+    width: 55px;
+    height: 56px;
+    border: 2px solid #363636;
+    border-radius: 50%;
+    background: url('../img/blog/details/quote-icon.png') center center no-repeat;
+
+}
+
+.wp-block-quote p {
+    font-weight: 400;
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    color: #ffffff !important;
+    line-height: 30px;
+    margin-bottom: 6px;
+}
+
+.wp-block-quote cite {
+    font-size: 15px;
+    font-style: normal;
+    color: #888888;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+
+/*---------------------
+  Стили для Модального окна
+-----------------------*/
+.modal {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9998;
+    display: none;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal .wrapper {
+    position: relative;
+    height: 100vh;
+}
+
+.modal__closer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: transparent;
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.modal__closer:after,
+.modal__closer:before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-bottom: 1px solid #fff;
+    top: 50%;
+    width: 100%;
+    left: 0;
+}
+
+.modal__closer:before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.modal__closer:after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.modal__closer:active:after,
+.modal__closer:active:before,
+.modal__closer:focus:after,
+.modal__closer:focus:before,
+.modal__closer:hover:after,
+.modal__closer:hover:before {
+    border-bottom-color: #c50c0c;
+    -webkit-transition: border-bottom-color .5s;
+    -o-transition: border-bottom-color .5s;
+    -moz-transition: border-bottom-color .5s;
+    transition: border-bottom-color .5s;
+}
+
+.modal-content {
+    -webkit-box-shadow: 0 0 15px 3px #777;
+    -moz-box-shadow: 0 0 15px 3px #777;
+    box-shadow: 0 0 15px 3px #777;
+    padding: 40px 10px;
+    position: absolute;
+    z-index: 99999;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+    width: 90%;
+    max-width: 800px;
+    overflow: auto;
+    background-color: #000;
+}
+
+.modal-content__h {
+    font-family: "Oswald", sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.modal-form__form {
+    text-align: center;
+}
+
+.modal-form__form p {
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+}
+
+.modal-form__form input {
+    width: 100%;
+    margin: 0 auto;
+    border: none;
+    display: block;
+    font: inherit;
+    background-color: #1f2021;
+    color: #ccc;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+}
+
+.modal-form__form input::-webkit-input-placeholder {
+    color: #ccc;
+    font-size: 16px;
+}
+
+.modal-form__form input::-moz-placeholder {
+    color: #ccc;
+    font-size: 16px;
+}
+
+.modal-form__form input:-ms-input-placeholder {
+    color: #ccc;
+    font-size: 16px;
+}
+
+.modal-form__form input::-ms-input-placeholder {
+    color: #ccc;
+    font-size: 16px;
+}
+
+.modal-form__form input::placeholder {
+    color: #ccc;
+    font-size: 16px;
+}
+
+.modal form .btn {
+    background-color: #fff;
+    min-width: 120px;
+}
+
+
+/*---------------------
+  Стили для хлебных крошек Breadcrumb Section
+-----------------------*/
+
+.breadcrumbs {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 700;
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+}
+.breadcrumbs span::after {
+    content: '';
+    display: none;
+}
+
+.breadcrumbs span:first-child a span  {
+    color: #fff;
+}
+
+.breadcrumbs span {
+    font-size: 18px;
+    color: #f36100;
+    font-weight: 700;
+}
+/*---------------------
+  Стили для Contact Form 7
+-----------------------*/
+.leave-comment form input[type=submit] {
+    font-size: 14px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 100%;
+    border: none;
+    padding: 14px 0 12px;
+    background: #f36100;
+}
+
+.wpcf7 form .wpcf7-response-output {
+    color: #fff;
+}
+/*---------------------
+  Стили для поиска
+-----------------------*/
+h4.search-title {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.search-section a {
+   color: #f36100;
+}
+
+/*---------------------
+  BMI калькулятор
+-----------------------*/
+
+.bmi-calculator-section #output {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+
+.chart-red{
+    background-color: red !important;
+}
+
+.chart-green {
+    background-color: green !important;
+}
+
+.chart-yellow {
+    background-color: yellow !important;
+}
+
+/*---------------------
+  Timetable - расписание тренировок
+-----------------------*/
+.class-timetable tbody tr:nth-child(even) td:nth-child(odd),
+.class-timetable tbody tr:nth-child(odd) td:nth-child(even){
+    background: #0a0a0a;
+}
+/*.class-timetable table tbody tr td {*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*.class-timetable table tbody tr td::after {*/
+/*    position: absolute;*/
+/*    left: -47px;*/
+/*    top: 59px;*/
+/*    width: 237px;*/
+/*    height: 1px;*/
+/*    background: #363636;*/
+/*    content: "";*/
+/*    -webkit-transform: rotate(-40deg);*/
+/*    -ms-transform: rotate(-40deg);*/
+/*    transform: rotate(-40deg);*/
+/*}*/
+
+/*.class-timetable table tbody tr td:first-child::after {*/
+/*    height: 0;*/
+/*}*/
